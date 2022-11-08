@@ -3,7 +3,7 @@ export interface IStore {
   id: string;
   name: string;
 }
-enum ProductTypeE {
+export enum ProductTypeE {
   FOOD,
   SPORTS,
 }
@@ -11,18 +11,25 @@ export interface IProduct {
   name: string;
   type: ProductTypeE;
 }
+export interface IWeight
+{
+  value: number
+}
 export interface IPrice {
-  price: number;
+  value : number;
   naPromocji: boolean;
 }
-export interface ProductAndPrice {
+
+export interface IProductAndPrice {
+  id : string;
   product: IProduct;
   price: IPrice;
+  weight: IWeight;
 }
 export interface ITicket {
   purchaseDate: Date;
   store: IStore;
   id: string;
   name: string;
-  products: Array<ProductAndPrice>;
+  products: Array<IProductAndPrice>;
 }

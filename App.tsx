@@ -26,7 +26,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import TicketViewC from './components/ticketViewComponents/TicketViewC';
+import  TicketsC from './src/components/ticketViewComponents/TicketsC';
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -66,7 +66,7 @@ const App = () => {
   };
 
   return (
-    <TicketViewC/>
+    <TicketsC/>
   );
 };
 
