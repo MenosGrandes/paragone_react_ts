@@ -25,6 +25,7 @@ export interface IProductAndPrice {
   product: IProduct;
   price: IPrice;
   weight: IWeight;
+  viewSettings : IProductAndPriceViewSettings;
 }
 export interface ITicket {
   purchaseDate: Date;
@@ -32,4 +33,10 @@ export interface ITicket {
   id: string;
   name: string;
   products: Array<IProductAndPrice>;
+}
+
+
+export interface IProductAndPriceViewSettings
+{
+  isExpanded : boolean
 }

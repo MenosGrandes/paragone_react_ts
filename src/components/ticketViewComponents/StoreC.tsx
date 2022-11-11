@@ -3,7 +3,7 @@ import React from 'react'
 
 import styles from '../../styles/style.css'
 import { StoreD } from '../../dataClass/TicketImpl';
-const StoreC = ({ data }: { data: StoreD}) => (
+const StoreC = ({ data }: { data: StoreD }) => (
   <View>
     <Text >{data.id}</Text>
   </View>

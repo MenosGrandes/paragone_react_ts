@@ -1,13 +1,11 @@
 import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
-import { ProductTypeE, IProduct, IStore, ITicket, IPrice, IProductAndPrice, IWeight } from "./TicketI";
+import { ProductTypeE, IProduct, IStore, ITicket, IPrice, IProductAndPrice, IWeight, IProductAndPriceViewSettings } from "./TicketI";
 
 
-export class Weight implements IWeight
-{
-  value : number;
-  constructor(value : number)
-  {
+export class Weight implements IWeight {
+  value: number;
+  constructor(value: number) {
     this.value = value;
   }
 
@@ -22,7 +20,7 @@ export class Product implements IProduct {
   }
 }
 export class Price implements IPrice {
-  value : number;
+  value: number;
   naPromocji: boolean;
   constructor(price: number, naPromocji: boolean) {
     this.value = price;
@@ -35,15 +33,24 @@ export class ProductAndPrice implements IProductAndPrice {
   product: IProduct;
   price: IPrice;
   weight: IWeight;
-  id : string
-  constructor(product: IProduct, price: IPrice, weight : IWeight) {
+  id: string;
+  viewSettings: IProductAndPriceViewSettings;
+  constructor(product: IProduct, price: IPrice, weight: IWeight) {
     this.product = product;
     this.price = price;
     this.weight = weight;
     this.id = uuidv4();
+    this.viewSettings = new ProductAndPriceViewSettings(false);
 
   }
 
+}
+export class ProductAndPriceViewSettings implements IProductAndPriceViewSettings {
+  isExpanded: boolean;
+
+  constructor(isExpanded: boolean) {
+    this.isExpanded = isExpanded;
+  }
 }
 export class StoreD implements IStore {
   id: string;
