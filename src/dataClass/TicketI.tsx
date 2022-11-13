@@ -25,7 +25,6 @@ export interface IProductAndPrice {
   product: IProduct;
   price: IPrice;
   weight: IWeight;
-  viewSettings : IProductAndPriceViewSettings;
 }
 export interface ITicket {
   purchaseDate: Date;
@@ -36,7 +35,6 @@ export interface ITicket {
 }
 
 
-export interface IProductAndPriceViewSettings
-{
-  isExpanded : boolean
+export interface IIsVisible {
+  isVisible: boolean;
 }

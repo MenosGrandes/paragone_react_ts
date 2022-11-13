@@ -3,15 +3,13 @@ import React from 'react'
 import { ITicket } from '../../dataClass/TicketI';
 import StoreC from './StoreC';
 
-import styles from '../../styles/style.css'
 import ProductsC from './ProductsC';
-import { TicketD } from '../../dataClass/TicketImpl';
-
-const TicketC = ({ data }: { data: TicketD}) => (
+import styles from '../../styles/style.css'
+const TicketC = ({ ticket }: { ticket: ITicket }) => (
   <View>
-    <Text className={styles.red}> {data.name}</Text>
-    <StoreC data={data.store} />
-    <ProductsC data={data.products} />
+    <Text className={styles.red}> {ticket.name}</Text>
+    <StoreC store={ticket.store} />
+    <ProductsC data={ticket.products} />
   </View>
 );
 

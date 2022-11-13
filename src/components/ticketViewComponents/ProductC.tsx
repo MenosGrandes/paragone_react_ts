@@ -1,13 +1,12 @@
-
 import React from 'react'
-import { Text, View } from "react-native";
-import { IProduct, IProductAndPrice } from "../../dataClass/TicketI";
-import ExpandableC from '../ExpandableC';
+import { Text, View } from 'react-native';
+import { IProductAndPrice } from '../../dataClass/TicketI'
 
-const ProductC = ({ data}: { data: IProductAndPrice}) => (
-  <View>
-    <Text> data.product.name</Text>
-  </View>
-);
-
+const ProductC = ({ product }: { product: IProductAndPrice }) => {
+  return (
+    <View>
+      <Text>{product.product.name}</Text>
+    </View>
+  )
+}
 export default ProductC;

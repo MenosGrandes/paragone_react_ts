@@ -2,10 +2,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 import styles from '../../styles/style.css'
-import { StoreD } from '../../dataClass/TicketImpl';
-const StoreC = ({ data }: { data: StoreD }) => (
+import { IStore } from '../../dataClass/TicketI';
+const StoreC = ({ store }: { store: IStore }) => (
   <View>
-    <Text >{data.id}</Text>
+    <Text >{store.name}</Text>
   </View>
 );
 

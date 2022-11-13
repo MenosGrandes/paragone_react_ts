@@ -1,21 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FlatList, View, Text } from 'react-native';
-import { IProduct, ITicket, ProductTypeE } from '../../dataClass/TicketI';
-import * as IMPL from '../../dataClass/TicketImpl';
+import { IIsVisible, IProduct, ITicket, ProductTypeE } from '../../dataClass/TicketI';
 import TicketC from './TicketC';
 import * as constants from '../../data'
 
-
-
-
 import styles from '../../styles/style.css'
 
-const TicketsC= () => {
+const TicketsC = () => {
   return (
     <View>
-      <FlatList className={styles.flex} className={styles.Store}
+      <FlatList className={styles.flex} 
         data={constants.DATA}
-        renderItem={({ item }) => <TicketC data={item} />}
+        renderItem={({ item }) => <TicketC ticket={item} />}
         keyExtractor={(item: ITicket) => item.id}
       />
     </View>
