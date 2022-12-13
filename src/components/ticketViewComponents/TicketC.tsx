@@ -4,14 +4,16 @@ import { ITicket } from '../../dataClass/TicketI';
 import StoreC from './StoreC';
 
 import ProductsC from './ProductsC';
-import styles from '../../styles/style.css'
-const TicketC = ({ ticket }: { ticket: ITicket }) => (
-  <View>
-    <Text className={styles.red}> {ticket.name}</Text>
-    <StoreC store={ticket.store} />
-    <ProductsC data={ticket.products} />
-  </View>
-);
-
+import { useTailwind } from 'tailwind-rn';
+const TicketC = ({ ticket }: { ticket: ITicket }) => {
+  	const tailwind = useTailwind();
+  return (
+    <View>
+      <Text style={tailwind('text-blue-600')}> {ticket.name}</Text>
+      <StoreC store={ticket.store} />
+      <ProductsC data={ticket.products} />
+    </View>
+  );
+}
 export default TicketC;
 

@@ -1,6 +1,6 @@
 
 import * as IMPL from './dataClass/TicketImpl';
-import { IProduct, ITicket, ProductTypeE } from './dataClass/TicketI';
+import { ProductTypeE } from './dataClass/TicketI';
 
 const aldi_s: IMPL.StoreD = new IMPL.StoreD("Aldi");
 
