@@ -15,7 +15,6 @@ const ProductsC = ({ data }: { data: Array<IProductAndPrice> }) => {
         onPress={() => { setIsVisible(!isVisible) }}>
 
         <Text>ListProduktow</Text>
-        <Text>{String(isVisible)}</Text>
       </TouchableOpacity>
       {
         isVisible &&
