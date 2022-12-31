@@ -1,6 +1,6 @@
 import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
-import { ProductTypeE, IProduct, IStore, ITicket, IPrice, IProductAndPrice, IWeight, IProductAndPriceViewSettings } from "./TicketI";
+import { ProductTypeE, IProduct, IStore, ITicket, IPrice, IProductPriceWeight, IWeight, IProductAndPriceViewSettings } from "./TicketI";
 
 
 export class Weight implements IWeight {
@@ -12,34 +12,36 @@ export class Weight implements IWeight {
 }
 
 export class Product implements IProduct {
+  id: string;
   name: string;
-  type: ProductTypeE;
+  product_type: ProductTypeE;
   constructor(name: string, type: ProductTypeE) {
+    this.id = uuidv4();
     this.name = name;
-    this.type = type;
+    this.product_type = type;
   }
 }
 export class Price implements IPrice {
   value: number;
-  naPromocji: boolean;
+  cheeper: boolean;
   constructor(price: number, naPromocji: boolean) {
     this.value = price;
-    this.naPromocji = naPromocji;
+    this.cheeper = naPromocji;
   }
 
 }
 
-export class ProductAndPrice implements IProductAndPrice {
+export class ProductAndPrice implements IProductPriceWeight {
   product: IProduct;
   price: IPrice;
   weight: IWeight;
   id: string;
   viewSettings: IProductAndPriceViewSettings;
   constructor(product: IProduct, price: IPrice, weight: IWeight) {
+    this.id = uuidv4();
     this.product = product;
     this.price = price;
     this.weight = weight;
-    this.id = uuidv4();
     this.viewSettings = new ProductAndPriceViewSettings(false);
 
   }
@@ -56,24 +58,24 @@ export class StoreD implements IStore {
   id: string;
   name: string;
   constructor(name: string) {
-    this.name = name;
     this.id = uuidv4();
+    this.name = name;
   }
 }
 export class TicketD implements ITicket {
-  purchaseDate: Date;
+  purchase_date: Date;
   store: IStore;
   id: string;
   name: string;
-  products: Array<IProductAndPrice>;
+  products: Array<IProductPriceWeight>;
   constructor(purchaseDate: Date, store: IStore, name: string) {
-    this.purchaseDate = purchaseDate;
-    this.store = store;
     this.id = uuidv4();
+    this.purchase_date = purchaseDate;
+    this.store = store;
     this.name = name;
     this.products = [];
   }
-  addProduct(product: IProductAndPrice) {
+  addProduct(product: IProductPriceWeight) {
     this.products.push(product)
   }
 }

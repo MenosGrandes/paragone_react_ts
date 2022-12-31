@@ -5,8 +5,9 @@ import StoreC from './StoreC';
 
 import ProductsC from './ProductsC';
 import { useTailwind } from 'tailwind-rn';
+
 const TicketC = ({ ticket }: { ticket: ITicket }) => {
-  	const tailwind = useTailwind();
+  const tailwind = useTailwind();
   return (
     <View>
       <Text style={tailwind('text-blue-600')}> {ticket.name}</Text>

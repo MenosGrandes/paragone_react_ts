@@ -1,15 +1,14 @@
+
 import React from 'react'
 import { Button, View } from 'react-native'
-import TicketsC from '../TicketsC'
 
-export const Home = ({navigation} : {navigation : any}) => {
+export const About = ({navigation} : {navigation : any}) => {
   return (
-    <View >
+    <View>
       <Button
         onPress={() => navigation.navigate('Notifications')}
         title="Go to notifications"
       />
-      <TicketsC/>
     </View>
   )
 }

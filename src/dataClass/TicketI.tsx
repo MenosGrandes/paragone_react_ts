@@ -8,8 +8,9 @@ export enum ProductTypeE {
   SPORTS,
 }
 export interface IProduct {
+  id: string;
   name: string;
-  type: ProductTypeE;
+  product_type: ProductTypeE;
 }
 export interface IWeight
 {
@@ -17,21 +18,20 @@ export interface IWeight
 }
 export interface IPrice {
   value : number;
-  naPromocji: boolean;
+  cheeper: boolean;
 }
 
-export interface IProductAndPrice {
-  id : string;
+export interface IProductPriceWeight {
   product: IProduct;
   price: IPrice;
   weight: IWeight;
 }
 export interface ITicket {
-  purchaseDate: Date;
-  store: IStore;
   id: string;
+  purchase_date: Date;
+  store: IStore;
   name: string;
-  products: Array<IProductAndPrice>;
+  products: Array<IProductPriceWeight>;
 }
 
 

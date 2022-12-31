@@ -1,8 +1,12 @@
-
 import * as IMPL from './dataClass/TicketImpl';
 import { ProductTypeE } from './dataClass/TicketI';
 
 const aldi_s: IMPL.StoreD = new IMPL.StoreD("Aldi");
+const ENDPOINT_IP = "http://192.168.1.156:8086"
+const GET_ALL_TICKETS_GET = "/get_all_tickets"
+
+
+export const GET_ALL_TICKET_ENDPOINT = ENDPOINT_IP + GET_ALL_TICKETS_GET;
 
 var randomstring = require("randomstring");
 
@@ -21,5 +25,5 @@ function generateRandomTicket() {
   }
   return ticket;
 }
-export const DATA: Array<IMPL.TicketD> = [...new Array<IMPL.TicketD>(3)].map(() => generateRandomTicket());
+export const DATA: Array<IMPL.TicketD> = [...new Array<IMPL.TicketD>(1)].map(() => generateRandomTicket());
 
